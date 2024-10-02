@@ -118,26 +118,32 @@
     <script src="https://smtpjs.com/v3/smtp.js"></script>
     
     <script>
-        const form = document.querySelector('.contact_form'),
-            name = document.querySelector('.name'),
-            email = document.querySelector('.email'),
-            tel = document.querySelector('.tel'),
-            adress = document.querySelector('.adress'),
-            msg = document.querySelector('.msg'),
-            file = document.querySelector('.file'),
+        const form = document.querySelector('.contact_form');
+        function sendMsg(e){
+            e.preventDefault();
+                
+            const name = document.querySelector('.name'),
+                  email = document.querySelector('.email'),
+                  tel = document.querySelector('.tel'),
+                  adress = document.querySelector('.adress'),
+                  msg = document.querySelector('.msg'),
+                  file = document.querySelector('.file'),
         // Função de enviar email
-        Email.send({
-            SecureToken : "",
-            To : 'them@website.com',
-            From : "you@isp.com",
-            Subject : "This is the subject",
-            Body : "And this is the body"
-        }).then(
-            message => alert(message)
-        );
+            Email.send({
+                SecureToken : "238d698d-baa0-47f6-a220-9c8013a75be4",
+                To : 'atividadeextensionista@outlook.com',
+                From : email.value,
+                Subject : "Forma de Contato",
+                Body : msg.value
+            }).then(
+                message => alert(message)
+            );
+        
+
     
+        }
     
-    
+        form.addEventListener('submit', sendMsg);
     </script>
     </body>
     </html>
