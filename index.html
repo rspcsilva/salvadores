@@ -107,7 +107,11 @@
             
             <textarea class="msg" cols="5" rows="5" required placeholder="Deixe um comentário *"></textarea>
             
-            <button class="file" type="file">Selecione os arquivos... *</button>
+		<label class="picture" tabIndex="0">
+		   <input type="file" accept="image/*" class="picture__input"/>
+		   <span class="picture__image"></span>
+		</label>
+
            
             <button type="submit">Enviar</button>
             
